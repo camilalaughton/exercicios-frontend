@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 20px;
+           
+        }
+
+        input {
+            margin: 15px;
+            width: 20%;
+            height: 20px;
+        }    
+
+        button {
+            font-weight: bold;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Calculadora de Troco</h1>
+
+    <form action="#" method="get">
+        <label for="valorproduto">Valor do Produto: </label> <br>
+        <input type="text" name="valorproduto" id="valorproduto" placeholder="Ex: 100" required> <br>
+        <label for="valorpago">Valor Pago: </label> <br>
+        <input type="text" name="valorpago" id="valorpago" placeholder="Ex: 200" required> <br>
+
+        <button type="button" id="btn">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular () {
+            let precotexto = document.getElementById("valorproduto").value;
+            let pagotexto = document.getElementById("valorpago").value;
+            
+            let preco = parseFloat(precotexto);
+            let pago = parseFloat(pagotexto);
+
+            if (isNaN(preco) || isNaN(pago) || pago == 0 || preco == 0)  {
+                document.getElementById("resultado").textContent = "Digite valores válidos!";
+                return;
+            }
+
+            if (pago < preco) {
+                document.getElementById("resultado").textContent = "Valor pago insuficiente!"
+                return;
+            }
+
+            let troco = pago - preco; 
+            document.getElementById("resultado").textContent = "Troco: R$ " + troco.toFixed(2); 
+        }
+
+        document.getElementById("btn").addEventListener("click", calcular); 
+    </script>
+</body>
+</html>
