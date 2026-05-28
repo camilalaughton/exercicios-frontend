@@ -30,17 +30,21 @@
     </style> 
 </head>
 <body>
-    <h1>Calculadora de Troco</h1>
+    <header>
+        <h1>Calculadora de Troco</h1>
+    </header>
 
-    <form action="#" method="get">
-        <label for="valorproduto">Valor do Produto: </label> <br>
-        <input type="text" name="valorproduto" id="valorproduto" placeholder="Ex: 100" required> <br>
-        <label for="valorpago">Valor Pago: </label> <br>
-        <input type="text" name="valorpago" id="valorpago" placeholder="Ex: 200" required> <br>
-
-        <button type="button" id="btn">Calcular</button>
-    </form>
-    <p id="resultado"></p>
+    <main>
+        <form action="#" method="get">
+            <label for="valorproduto">Valor do Produto: </label> <br>
+            <input type="text" name="valorproduto" id="valorproduto" placeholder="Ex: 100" required> <br>
+            <label for="valorpago">Valor Pago: </label> <br>
+            <input type="text" name="valorpago" id="valorpago" placeholder="Ex: 200" required> <br>
+            <button type="button" id="btn">Calcular</button>
+            
+        </form>
+        <p id="resultado"></p>
+    </main>
 
     <script>
         function calcular () {
