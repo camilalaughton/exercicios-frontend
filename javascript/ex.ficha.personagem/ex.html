@@ -3,24 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Ficha do Personagem</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Ficha do Personagem</h1>
     </header>
     <main>
-        <form action="#" method="get">
+        <form action="#" method="get" class="form">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome" required>
         <label for="forca">Força: </label>
-        <input type="text" name="forca" id="forca" required placeholder="Número de 1 a 10">
+        <input type="text" name="forca" id="forca" required placeholder=" de 1 a 10">
         <label for="agilidade">Agilidade: </label>
-        <input type="text" name="agilidade" id="agilidade" required placeholder="Número de 1 a 10"> 
+        <input type="text" name="agilidade" id="agilidade" required placeholder=" de 1 a 10"> 
         <label for="nivel">Nível: </label>
-        <input type="text" name="nivel" id="nivel" required placeholder="Número de 1 a 10">
+        <input type="text" name="nivel" id="nivel" required placeholder=" de 1 a 10">
+        <button type="button" id="btn">Calcular</button>
         </form>
-    
+
+        <div id="resultado">
+                <p id="resultNome"></p>
+                <p id="resultAtaque"></p>
+                <p id="resultDefesa"></p>
+                <p id="resultStatus"></p>
+                <p id="resultNivel"></p>
+            </div>
+   
     </main>
+
+    <script>
+        function calcular() {
+            let nometexto = document.getElementById("nome").value;
+            let forcatexto = document.getElementById("forca").value;
+            let agilidadetexto = document.getElementById("agilidade").value;
+            let niveltexto = document.getElementById("nivel").value;
+
+
+            let btnforca = parseInt(forcatexto);
+            let btnagilidade = parseInt(agilidadetexto);
+            let btnnivel = parseInt(niveltexto);
+
+            document.getElementById("resultNome").textContent = "Nome: " + nometexto; 
+
+            let ataque = btnforca * btnnivel; 
+            let defesa = Math.round(btnagilidade * 1.5); 
+            document.getElementById("resultAtaque").textContent = "Poder de Ataque: " + ataque;  
+            document.getElementById("resultDefesa").textContent = "Poder de Defesa: " + defesa; 
+
+            if (isNaN(btnforca) || isNaN(btnagilidade) || isNaN(btnnivel)) {
+                document.getElementById("resultado").textContent = "Digite valores válidos!";
+            }
+
+            if (ataque > defesa) {
+                document.getElementById("resultStatus").textContent = "Status: Personagem ofensivo!";
+                document.getElementById("resultStatus").style.color = "green";
+
+            } else if (ataque < defesa) {
+                document.getElementById("resultStatus").textContent = "Status: Personagem defensivo!";  
+
+            } else {
+                document.getElementById("resultStatus").textContent = "Status: Personagem equilibrado!"; 
+            }
+
+            if (btnnivel >=10) {
+                document.getElementById("resultNivel").textContent = "Nível: Lendário!"; 
+            } 
+            
+            else if (btnnivel>=5) {
+                document.getElementById("resultNivel").textContent = "Nível: Experiente!"; 
+
+            } else {
+                document.getElementById("resultNivel").textContent = "Nível: Iniciante!"; 
+            }
+
+        }
+
+        document.getElementById("btn").addEventListener("click", calcular);
+
+    </script>
 </body>
 </html>
