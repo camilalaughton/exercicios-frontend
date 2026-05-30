@@ -20,22 +20,23 @@ body {
     font-family: var(--fonte);
     background-color: var(--cor-fundo-principal);
     color: var(--cor-fonte); 
+    min-height: 100vh; 
 }
 
 h1 {
     text-align: center; 
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 0px;
 }
 
 main {
     display: flex;
     justify-content:center;
     align-items: center;
-    min-height: 100vh; 
     font-weight: bold;
     font-size: 19px;
-
+    flex-direction: column;
+    padding: 20px;
 }
 
 .form {
@@ -58,7 +59,8 @@ input {
 }
 
 #resultado {
-    
+    padding: 20px;
+    min-height: 110px; 
 }
 
 #btn {

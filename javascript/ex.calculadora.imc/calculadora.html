@@ -13,18 +13,22 @@
     </style>
 </head>
 <body>
-    <h1>Calculadora IMC</h1>
-    <p>Informe seus dados abaixo!</p>
-    <form action="#" method="get"> 
-        <label for="height">Altura (m)</label> 
-        <input type="text" name="height" id="height" placeholder="1.75" required> 
-
-        <label for="weight">Peso (kg)</label>
-        <input type="text" name="weight" id="weight" placeholder="70" required>
-
-        <button type="button" id="btn">Calcular</button>
-    </form>
-    <p id="resultado"></p>
+    <header>
+        <h1>Calculadora IMC</h1>
+    </header>
+    <main>
+        <p>Informe seus dados abaixo!</p>
+        <form>
+            <label for="height">Altura (m)</label>
+            <input type="text" name="height" id="height" placeholder="1.75" required>
+            <label for="weight">Peso (kg)</label>
+            <input type="text" name="weight" id="weight" placeholder="70" required>
+            <button type="button" id="btn">Calcular</button>
+        </form>
+        <div class="result">
+            <p id="resultado"></p>
+        </div>
+    </main>
 
     <script>
        

@@ -11,15 +11,15 @@
         <h1>Ficha do Personagem</h1>
     </header>
     <main>
-        <form action="#" method="get" class="form">
+        <form class="form">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome" required>
         <label for="forca">Força: </label>
-        <input type="text" name="forca" id="forca" required placeholder=" de 1 a 10">
+        <input type="number" name="forca" id="forca" required min="1" max="10">
         <label for="agilidade">Agilidade: </label>
-        <input type="text" name="agilidade" id="agilidade" required placeholder=" de 1 a 10"> 
+        <input type="number" name="agilidade" id="agilidade" required min="1" max="10"> 
         <label for="nivel">Nível: </label>
-        <input type="text" name="nivel" id="nivel" required placeholder=" de 1 a 10">
+        <input type="number" name="nivel" id="nivel" required min="1" max="10">
         <button type="button" id="btn">Calcular</button>
         </form>
 
@@ -29,6 +29,7 @@
                 <p id="resultDefesa"></p>
                 <p id="resultStatus"></p>
                 <p id="resultNivel"></p>
+                <p id="erro"></p>
             </div>
    
     </main>
@@ -45,6 +46,13 @@
             let btnagilidade = parseInt(agilidadetexto);
             let btnnivel = parseInt(niveltexto);
 
+            if (isNaN(btnforca) || isNaN(btnagilidade) || isNaN(btnnivel)) {
+                document.getElementById("erro").textContent = "Digite valores válidos!";
+                return;
+            }
+            
+            document.getElementById("erro").textContent = "";
+
             document.getElementById("resultNome").textContent = "Nome: " + nometexto; 
 
             let ataque = btnforca * btnnivel; 
@@ -52,9 +60,6 @@
             document.getElementById("resultAtaque").textContent = "Poder de Ataque: " + ataque;  
             document.getElementById("resultDefesa").textContent = "Poder de Defesa: " + defesa; 
 
-            if (isNaN(btnforca) || isNaN(btnagilidade) || isNaN(btnnivel)) {
-                document.getElementById("resultado").textContent = "Digite valores válidos!";
-            }
 
             if (ataque > defesa) {
                 document.getElementById("resultStatus").textContent = "Status: Personagem ofensivo!";
