@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Página de Contato</h1>
+        <nav>
+        <a href="#">Início</a>
+        <a href="#">Conteúdos</a>
+        <a href="#">Contato</a>
+        <a href="#">Dúvidas</a>
+        <a href="#">Extra</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post">
+                <label for="name">Nome: </label>
+                <input type="text" name="name" id="name" class="inputs">
+                
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" class="inputs">
+                
+                <label for="subject">Assunto: </label>
+                <select name="subject" id="subject" class="inputs">
+                    <option value="duvida">Dúvida</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                </select>
+                <label for="text">Escreva em detalhes abaixo: </label>
+                <textarea name="text" id="text" rows="5" cols="33"></textarea class="inputs">
+                <input type="button" value="Enviar" class="button">
+            </form>
+        </section>
+    </main>
+
+    <footer>Todos os direitos reservados &copy;</footer>
+</body>
+</html>
