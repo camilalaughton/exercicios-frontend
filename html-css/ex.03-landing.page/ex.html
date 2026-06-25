@@ -13,8 +13,10 @@
 </head>
 <body>
     <header id="logo">
-        <h1>VILA VERDE<span class="reg">&reg;</span></h1>
-            <span class="subtitle">Produtos naturais</span>
+        <div class="logo">
+            <h1>VILA VERDE<span class="reg">&reg;</span></h1>
+            <span class="subtitle">PRODUTOS NATURAIS</span>
+        </div>
 
         <nav id="menu">
             <ul>
@@ -33,31 +35,44 @@
 
     <main>
         <section id="hero">
-            <h1>Nossos produtos</h1>
-            <p>Produtos naturais selecionados para trazer mais saúde e bem-estar para o seu dia a dia.</p>
-           <button class="hero-button1">Ver produtos</button>
-           <button class="hero-button2">Saiba mais</button>
-            <img src="limao-h.jpg" alt="imagem de um limão" class="img-hero">
+            <div class="hero-texto">
+                <h1>Nossos produtos</h1>
+                <p>Produtos naturais selecionados para trazer mais saúde e bem-estar para o seu dia a dia.</p>
+            </div>
+           <div class="hero-buttons">
+               <button class="hero-button1">Ver produtos</button>
+               <button class="hero-button2">Saiba mais</button>
+           </div>
+            <div><img src="limao-h.jpg" alt="imagem de um limão" class="img-hero"></div>
         </section>
 
+        <!--FEATURES-->
         <section id="features">
-            <h1>Nossos produtos</h1>
-            <div>
-                <img src="img-banana.jpg" alt="imagem de uma banana">
-                <h2 class="card-title1">Banana</h2>
-                <span>Rica em potássio e fibras, ótima para sua saúde.</span>
+            <h1>Conheça nossos produtos</h1>
+            <div class="cards">
+                <div class="card-banana">
+                    <img src="img-banana.jpg" alt="imagem de uma banana">
+                    <h2 class="card-title1">Banana</h2>
+                    <span>Rica em potássio e fibras, ótima para sua saúde.</span>
+                </div>
 
-                <img src="img-mamao.jpg" alt="imagem de um mamão">
-                <h2 class="card-title2">Mamão</h2>
-                <span>Fonte de vitamina A e enzimas que ajudam na digestão.</span>
+                <div class="card-mamao">
+                    <img src="img-mamao.jpg" alt="imagem de um mamão">
+                    <h2 class="card-title2">Mamão</h2>
+                    <span>Fonte de vitamina A e enzimas que ajudam na digestão.</span>
+                </div>
 
-                <img src="limao-h.jpg" alt="imagem de um limão">
-                <h2 class="card-title3">Limão</h2>
-                <span>Fortalece a imunidade e auxilia na desintoxicação.</span>
+                <div class="card-limao">
+                    <img src="limao-h.jpg" alt="imagem de um limão">
+                    <h2 class="card-title3">Limão</h2>
+                    <span>Fortalece a imunidade e auxilia na desintoxicação.</span>
+                </div>
 
-                <img src="pera.jpg" alt="imagem de uma pera">
-                <h2 class="card-title4">Pera</h2>
-                <span>Controla a glicose e evita doenças cardiovasculares.</span>
+                <div class="card-pera">
+                    <img src="pera.jpg" alt="imagem de uma pera">
+                    <h2 class="card-title4">Pera</h2>
+                    <span>Controla a glicose e evita doenças cardiovasculares.</span>
+                </div>
             </div>
             <button class="features-button">Ver todos os produtos <i class="fa-solid fa-arrow-right"></i></button>
         </section>
