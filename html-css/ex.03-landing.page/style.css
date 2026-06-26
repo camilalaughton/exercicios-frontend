@@ -191,6 +191,7 @@ section#hero {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
+    padding-bottom: 10px;
 }
 
 .card-banana h2 {
@@ -231,6 +232,7 @@ section#hero {
     border-top-right-radius: 10px;
 }
 
+/*FEATURES*/
 #features button {
     background-color: var(--cor-fundo-features-fonte-nav);
     color: var(--fonte-titulos);
@@ -247,7 +249,8 @@ section#hero {
 
 #features button:hover {
     cursor: pointer;
-    color: var(--cor-fundo-button-produtos);
+    background-color: var(--cor-fundo-button-produtos);
+    color: var(--cor-fundo-features-fonte-nav);
     transition: 0.5s;
 }
 
@@ -266,7 +269,9 @@ section#hero {
     width: 100vw;
     padding: 20px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pricing-top {
@@ -279,19 +284,100 @@ section#hero {
     padding: 10px;
     background-color: var(--cor-fundo-features-fonte-nav); 
     line-height: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
 }
 
 .pricing-card h2 {
     color: var(--cor-fundo-button-produtos);
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.pricing-card span {
+    display: flex;
+    flex-direction: row;
+}
+
+.preço {
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 .pricing-card ul {
-    list-style-type: none;
+    list-style-type: none; 
+    padding: 10px;
+    line-height: 25px;
+
 }
 
+ul li::before {
+  content: '\2713'; /* Código Unicode para o símbolo de check */
+  color: #28a745;   /* Cor verde para destacar */
+  font-weight: bold;
+  margin-right: 8px; /* Espaço entre o check e o texto */
+}
 
+.pricing-button {
+    background-color: var(--cor-fundo-button-produtos);
+    color: var(--cor-fundo-features-fonte-nav);
+    border-radius: 5px;
+    width: 30%;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#card1 {
+    margin-bottom: 30px;
+}
 
 /*FOOTER*/
+footer {
+    background-color: var(--cor-fundo-header);
+    color: var(--cor-fundo-features-fonte-nav);
+    padding: 20px;
+    line-height: 30px; 
+}
+
+.footer-slogan h2 {
+    font-size: 1em;
+    color: var(--cor-fundo-titulo-header);
+}
+
+.footer-slogan p {
+    padding-bottom: 15px;
+}
+
+#insta, #wpp {
+    color: var(--cor-fundo-titulo-header);
+    background-color: var(--cor-fundo-header);
+    cursor: pointer;
+}
+
+.footer-style {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.footer-style h2 {
+    font-size: 1em;
+}
+
+.footer-style a {
+    color: var(--cor-fundo-features-fonte-nav);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.copy {
+    text-align: center;
+}
 
 
 @media (min-width: 600px) {
