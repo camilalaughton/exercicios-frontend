@@ -231,13 +231,65 @@ section#hero {
     border-top-right-radius: 10px;
 }
 
+#features button {
+    background-color: var(--cor-fundo-features-fonte-nav);
+    color: var(--fonte-titulos);
+    width: 40%;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
 
+#features button i {
+    font-size: 10px;
+    
+}
+
+#features button:hover {
+    cursor: pointer;
+    color: var(--cor-fundo-button-produtos);
+    transition: 0.5s;
+}
+
+.botoes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 7px;
+    margin: 15px;
+
+}
 
 /*PRICING*/
 #pricing {
     background-color: var(--cor-fundo-pricing);
-    margin: 20px;
+    width: 100vw;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+.pricing-top {
+    padding: 10px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.pricing-card {
+    padding: 10px;
+    background-color: var(--cor-fundo-features-fonte-nav); 
+    line-height: 20px;
+}
+
+.pricing-card h2 {
+    color: var(--cor-fundo-button-produtos);
+}
+
+.pricing-card ul {
+    list-style-type: none;
+}
+
+
 
 /*FOOTER*/
 
