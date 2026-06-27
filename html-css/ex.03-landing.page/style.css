@@ -4,6 +4,7 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    
 }
 
 :root {
@@ -24,11 +25,9 @@
 body {
     width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
-    
-
 }
 
-
+/*HEADER*/
 header {
     background-color: var(--cor-fundo-header);
     display: flex;
@@ -47,8 +46,6 @@ header {
     flex-direction: column;
     margin: 15px;
     padding: 5px;
-
-    
 } 
 
 .logo h1 {
@@ -99,7 +96,7 @@ header {
     padding: 3px;
 }
 
-
+/*HERO*/
 section#hero {
     background-color: var(--cor-fundo-hero);
     padding: 15px; 
@@ -133,9 +130,9 @@ section#hero {
     padding: 5px;
     font-weight: bold;
     margin: 15px;
+    padding: 8px 16px;
     background-color: var(--cor-fundo-button-produtos);
     color: var(--cor-fundo-features-fonte-nav);
-    padding: 8px 16px;
 }
 
 .hero-button2 {
@@ -144,8 +141,8 @@ section#hero {
     padding: 5px;
     font-weight: bold;
     margin: 15px;
-    background-color: var(--cor-fundo-hero);
     padding: 8px 16px;
+    background-color: var(--cor-fundo-hero);
 }
 
 .hero-button1:hover,
@@ -160,6 +157,8 @@ section#hero {
     max-height: 200px;
     object-fit: cover;
     border-radius: 6px;
+    flex: 1;
+    align-self: center;
 
 }
 
@@ -183,15 +182,25 @@ section#hero {
     border-radius: 5px;
 }
 
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
 
 .card-banana, .card-mamao, .card-limao, .card-pera {
-    width: 200px;
+    flex: 1;
+    min-width: 150px; /* largura mínima antes de quebrar linha */
     margin: 10px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.041);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
     padding-bottom: 10px;
+    animation: slideIn 0.8s ease;
+}
+
+.card-mamao {
+    order: 1;
 }
 
 .card-banana h2 {
@@ -212,11 +221,12 @@ section#hero {
 }
 
 .cards {
-    width: 100vw; 
+    width: 100%; 
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     align-items: center;
     gap: 20px;
+    
 }
 
 .cards span {
@@ -225,7 +235,7 @@ section#hero {
 }
 
 .cards img {
-    width: 200px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     border-top-left-radius: 10px;
@@ -266,7 +276,7 @@ section#hero {
 /*PRICING*/
 #pricing {
     background-color: var(--cor-fundo-pricing);
-    width: 100vw;
+    width: 100%;
     padding: 20px;
     margin-top: 20px;
     display: flex;
@@ -323,13 +333,18 @@ ul li::before {
 }
 
 .pricing-button {
-    background-color: var(--cor-fundo-button-produtos);
-    color: var(--cor-fundo-features-fonte-nav);
+    background-color: orange;
+    color: black;
     border-radius: 5px;
     width: 30%;
     padding: 5px;
     margin-bottom: 10px;
     cursor: pointer;
+}
+
+.pricing-button.pricing-button-pro {
+    background-color: var(--cor-fundo-button-produtos);
+    color: var(--cor-fundo-features-fonte-nav);
 }
 
 #card1 {
@@ -379,13 +394,25 @@ footer {
     text-align: center;
 }
 
-
-@media (min-width: 600px) {
+@media (min-width: 550px) {
     section#hero {
         flex-direction: row;
     }
 
     .img-hero {
         width: 45%;
+    }
+}
+
+@media (min-width: 900px) {
+    #pricing {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .pricing-card {
+        width: 40%;
     }
 }
