@@ -6,10 +6,6 @@
     <title>Vila Verde</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
-    </style>
 </head>
 <body>
     <header id="logo">
@@ -25,24 +21,26 @@
                 <li><a href="#">Sobre Nós</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
+        </nav>
 
         <div id="icons">
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-whatsapp"></i>
         </div>
-        </nav>
     </header>
 
     <main>
         <section id="hero">
-            <div class="hero-texto">
-                <h1>Nossos produtos</h1>
-                <p>Produtos naturais selecionados para trazer mais saúde e <br> bem-estar para o seu dia a dia.</p>
+            <div class="hero-texto-buttons">
+                <div class="hero-texto">
+                    <h1>Nossos produtos</h1>
+                    <p>Produtos naturais selecionados para trazer mais saúde e <br> bem-estar para o seu dia a dia.</p>
+                </div>
+                           <div class="hero-buttons">
+                   <button class="hero-button1">Ver produtos</button>
+                   <button class="hero-button2">Saiba mais</button>
+                           </div>
             </div>
-           <div class="hero-buttons">
-               <button class="hero-button1">Ver produtos</button>
-               <button class="hero-button2">Saiba mais</button>
-           </div>
             <div><img src="limao-h.jpg" alt="imagem de um limão" class="img-hero"></div>
         </section>
 
@@ -59,7 +57,7 @@
                 <div class="card-mamao">
                     <img src="img-mamao.jpg" alt="imagem de um mamão">
                     <h2 class="card-title2">Mamão</h2>
-                    <span>Fonte de vitamina A e enzimas que ajudam na digestão.</span>
+                    <span>Fonte de vitamina A e enzimas digestivas.</span>
                 </div>
 
                 <div class="card-limao">
@@ -71,7 +69,7 @@
                 <div class="card-pera">
                     <img src="pera.jpg" alt="imagem de uma pera">
                     <h2 class="card-title4">Pera</h2>
-                    <span>Controla a glicose e evita doenças cardiovasculares.</span>
+                    <span>Controla a glicose e evita as doenças cardiovasculares.</span>
                 </div>
             </div>
             <div class="botoes"><button class="features-button">Ver todos os produtos <i class="fa-solid fa-arrow-right"></i></button></div>
@@ -83,26 +81,28 @@
                 <h1>Nossos planos</h1>
                 <span>Escolha o plano ideal para você</span>
             </div>
-            <div class="pricing-card" id="card1">
-                <h2>Plano Básico</h2>
-                <span><div class="preço">R$ 29,90 </div> /mês</span>
-                <ul>
-                    <li>Acesso a todos os produtos</li>
-                    <li>Descontos esclusivos</li>
-                    <li>Suporte por e-mail</li>
-                </ul>
-                <button class="pricing-button pricing-button-pro">Assinar agora</button>
-            </div>
-            <div class="pricing-card" id="card2">
-                <h2>Plano Premium</h2>
-                <span><div class="preço">R$ 59,90 </div> /mês</span>
-                <ul>
-                    <li>Acesso a todos os produtos</li>
-                    <li>Descontos esclusivos</li>
-                    <li>Suporte prioritário</li>
-                    <li>Frete grátis</li>
-                </ul>
-                <button class="pricing-button pricing-button-pro">Assinar agora</button>
+            <div class="cardsdepreço">
+                <div class="pricing-card" id="card1">
+                    <h2>Plano Básico</h2>
+                    <span><div class="preço">R$ 29,90 </div> /mês</span>
+                    <ul>
+                        <li>Acesso a todos os produtos</li>
+                        <li>Descontos esclusivos</li>
+                        <li>Suporte por e-mail</li>
+                    </ul>
+                    <button class="pricing-button pricing-button-pro">Assinar agora</button>
+                </div>
+                <div class="pricing-card" id="card2">
+                    <h2>Plano Premium</h2>
+                    <span><div class="preço">R$ 59,90 </div> /mês</span>
+                    <ul>
+                        <li>Acesso a todos os produtos</li>
+                        <li>Descontos esclusivos</li>
+                        <li>Suporte prioritário</li>
+                        <li>Frete grátis</li>
+                    </ul>
+                    <button class="pricing-button pricing-button-pro">Assinar agora</button>
+                </div>
             </div>
         </section>
     </main>

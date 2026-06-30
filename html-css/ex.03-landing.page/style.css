@@ -4,7 +4,6 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-    
 }
 
 :root {
@@ -23,7 +22,7 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -224,7 +223,7 @@ section#hero {
     width: 100%; 
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
     
 }
@@ -325,11 +324,12 @@ section#hero {
 
 }
 
-ul li::before {
+#pricing ul li::before {
   content: '\2713'; /* Código Unicode para o símbolo de check */
-  color: #28a745;   /* Cor verde para destacar */
+  color: #28a745;  
   font-weight: bold;
-  margin-right: 8px; /* Espaço entre o check e o texto */
+  margin-right: 8px; 
+
 }
 
 .pricing-button {
@@ -394,25 +394,158 @@ footer {
     text-align: center;
 }
 
+/*MEDIA QUERIES*/
 @media (min-width: 550px) {
-    section#hero {
-        flex-direction: row;
+    .hero-texto-buttons {
+        flex-direction: column;
     }
 
     .img-hero {
-        width: 45%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-mamao {
+        text-align: center;
+
+    }
+
+    .card-mamao span {
+        margin-right: 50px;
+    }
+
+    #features .card-mamao h2 {
+        width: auto;
+        margin: 10px auto;
+        padding: 5px 15px;
+        display: inline-block;
     }
 }
 
-@media (min-width: 900px) {
-    #pricing {
+@media (min-width: 700px) {
+    .footer-style, .footer-slogan {
+    width: calc(50% - 10px); /* duas colunas com gap de 20px */
+    }
+
+    .box01 {
+        display: flex;
         flex-direction: row;
-        align-items: flex-start;
+        justify-content: center; 
+    }
+
+    .box02 {
+        display: flex;
+        flex-direction: row;
+       
         justify-content: center;
+    }
+
+     .pricing-card {
+        width: 60%;
+    }
+}
+
+
+@media (min-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    section#hero {
+        flex-direction: row;
+        align-items: center;
         gap: 20px;
+        min-height: 400px;
+        padding: 40px;
+    }
+
+    #hero h1 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .hero-texto-buttons {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-hero {
+        width: 90%;
+        max-height: 350px;
+    }
+
+    #icons {
+        gap: 15px;
+    }
+
+    .pricing-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardsdepreço {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+
+    #pricing {
+        align-items: stretch; /* troca o flex-start que estava aqui */
     }
 
     .pricing-card {
-        width: 40%;
+        flex: 1;
+        justify-content: space-between; /* empurra o botão para baixo em todos */
     }
+
+    .pricing-button {
+	    width: 50%
+    }
+
+    #card1 {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    #menu ul {
+        gap: 40px;
+    }
+
+   section#hero {
+        min-height: 400px;
+    }
+
+    #hero h1 {
+    font-size: 65px;
+    }
+
+    .img-hero {
+        max-height: 400px;
+    }
+
+}
+
+@media (min-width: 1100px) {
+    #features button {
+        width: 20%;
+    }
+
+    .pricing-button {
+        width: 30%;
+    }
+
+    section#hero {
+        min-height: 400px;
+    }
+    
+    .img-hero {
+        max-height: 400px;
+    }
+
 }
