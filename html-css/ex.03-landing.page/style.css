@@ -7,18 +7,17 @@
 }
 
 :root {
-    --cor-fundo-header: #1A3023; 
-    --cor-fundo-titulo-header: #B0DF41;
-    --cor-fundo-hero: #F8F6E7; 
-    --cor-fundo-features-fonte-nav: #FEFEFE; 
-    --cor-fundo-pricing: #F0F5EF; 
-    --cor-fundo-button-produtos: #1A6034; 
-    --fonte-titulos: #1A281A; 
-    --cor-fundo-plano1: #468B0C; 
-    --cor-fundo-plano2: #EC7432;
-    --cor-fundo-plano3: #F8C625; 
-    --cor-fundo-plano4: #B72383; 
-
+    --header-bg-color: #1A3023;
+    --header-title-bg: #B0DF41;
+    --hero-bg-color: #F8F6E7;
+    --features-bg-color: #FEFEFE;
+    --pricing-bg-color: #F0F5EF;
+    --button-bg-color: #1A6034;
+    --title-text-color: #1A281A;
+    --plan-color-1: #468B0C;
+    --plan-color-2: #EC7432;
+    --plan-color-3: #F8C625;
+    --plan-color-4: #B72383;
 }
 
 body {
@@ -28,15 +27,15 @@ body {
 
 /*HEADER*/
 header {
-    background-color: var(--cor-fundo-header);
+    background-color: var(--header-bg-color);
     display: flex;
     flex-flow: column nowrap; 
     align-items: center;
 }
 
 .logo {
-    background-color: var(--cor-fundo-titulo-header);
-    color: var(--fonte-titulos);
+    background-color: var(--header-title-bg);
+    color: var(--title-text-color);
     font-weight: bold;
     width: 200px;
     text-align: center;
@@ -63,11 +62,11 @@ header {
 
 #menu a {
     text-decoration: none;
-    color: var(--cor-fundo-features-fonte-nav);
+    color: var(--features-bg-color);
 }
 
 #menu a:hover {
-    color: var(--cor-fundo-titulo-header);
+    color: var(--header-title-bg);
     transition: 0.5s;
     cursor: pointer;
 }
@@ -86,10 +85,11 @@ header {
     gap: 10px;
     padding-bottom: 10px;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .fa-brands {
-    background-color: var(--cor-fundo-titulo-header);
+    background-color: var(--header-title-bg);
     font-size: 20px;
     border-radius: 3px;
     padding: 3px;
@@ -97,15 +97,15 @@ header {
 
 /*HERO*/
 section#hero {
-    background-color: var(--cor-fundo-hero);
+    background-color: var(--hero-bg-color);
     padding: 15px; 
     line-height: 25px;
-    color: var(--fonte-titulos);
+    color: var(--title-text-color);
     display: flex;
     flex-direction: column;
 } 
 
-.hero-texto {
+.hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,8 +130,8 @@ section#hero {
     font-weight: bold;
     margin: 15px;
     padding: 8px 16px;
-    background-color: var(--cor-fundo-button-produtos);
-    color: var(--cor-fundo-features-fonte-nav);
+    background-color: var(--button-bg-color);
+    color: var(--features-bg-color);
 }
 
 .hero-button2 {
@@ -141,13 +141,13 @@ section#hero {
     font-weight: bold;
     margin: 15px;
     padding: 8px 16px;
-    background-color: var(--cor-fundo-hero);
+    background-color: var(--hero-bg-color);
 }
 
 .hero-button1:hover,
 .hero-button2:hover {
     cursor: pointer;
-    color: var(--cor-fundo-titulo-header);
+    color: var(--header-title-bg);
     transition: 0.5s;
 }
 
@@ -163,7 +163,7 @@ section#hero {
 
 /* FEATURES */
 #features {
-    background-color: var(--cor-fundo-features-fonte-nav);
+    background-color: var(--features-bg-color);
 }
 
 #features h1 {
@@ -174,7 +174,7 @@ section#hero {
     font-size: 15px;
     font-weight: normal;
     margin: 10px;
-    color: var(--cor-fundo-features-fonte-nav);
+    color: var(--features-bg-color);
     text-align: center;
     width: 40%;
     padding: 5px;
@@ -186,7 +186,7 @@ section#hero {
     to   { transform: translateX(0); opacity: 1; }
 }
 
-.card-banana, .card-mamao, .card-limao, .card-pera {
+.card-banana, .card-papaya, .card-lemon, .card-pear {
     flex: 1;
     min-width: 150px; /* largura mínima antes de quebrar linha */
     margin: 10px;
@@ -198,25 +198,31 @@ section#hero {
     animation: slideIn 0.8s ease;
 }
 
-.card-mamao {
+.card-papaya {
     order: 1;
 }
 
 .card-banana h2 {
-    background-color: var(--cor-fundo-plano1);
+    background-color: var(--plan-color-1);
 }
 
 
-.card-mamao h2 {
-    background-color: var(--cor-fundo-plano2);
+.card-papaya h2 {
+    background-color: var(--plan-color-2);
 }
 
-.card-limao h2{
-    background-color: var(--cor-fundo-plano3);
+/*.card-papaya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}*/
+
+.card-lemon h2{
+    background-color: var(--plan-color-3);
 }
 
-.card-pera h2 {
-    background-color: var(--cor-fundo-plano4);
+.card-pear h2 {
+    background-color: var(--plan-color-4);
 }
 
 .cards {
@@ -243,8 +249,8 @@ section#hero {
 
 /*FEATURES*/
 #features button {
-    background-color: var(--cor-fundo-features-fonte-nav);
-    color: var(--fonte-titulos);
+    background-color: var(--features-bg-color);
+    color: var(--title-text-color);
     width: 40%;
     padding: 10px;
     font-weight: bold;
@@ -258,12 +264,12 @@ section#hero {
 
 #features button:hover {
     cursor: pointer;
-    background-color: var(--cor-fundo-button-produtos);
-    color: var(--cor-fundo-features-fonte-nav);
+    background-color: var(--button-bg-color);
+    color: var(--features-bg-color);
     transition: 0.5s;
 }
 
-.botoes {
+.buttons {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -274,7 +280,7 @@ section#hero {
 
 /*PRICING*/
 #pricing {
-    background-color: var(--cor-fundo-pricing);
+    background-color: var(--pricing-bg-color);
     width: 100%;
     padding: 20px;
     margin-top: 20px;
@@ -291,17 +297,17 @@ section#hero {
 
 .pricing-card {
     padding: 10px;
-    background-color: var(--cor-fundo-features-fonte-nav); 
+    background-color: var(--features-bg-color); 
     line-height: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 .pricing-card h2 {
-    color: var(--cor-fundo-button-produtos);
+    color: var(--button-bg-color);
     font-size: 1em;
     font-weight: bolder;
     padding: 10px;
@@ -312,9 +318,9 @@ section#hero {
     flex-direction: row;
 }
 
-.preço {
+.price {
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.em;
 }
 
 .pricing-card ul {
@@ -336,15 +342,15 @@ section#hero {
     background-color: orange;
     color: black;
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
     padding: 5px;
     margin-bottom: 10px;
     cursor: pointer;
 }
 
 .pricing-button.pricing-button-pro {
-    background-color: var(--cor-fundo-button-produtos);
-    color: var(--cor-fundo-features-fonte-nav);
+    background-color: var(--button-bg-color);
+    color: var(--features-bg-color);
 }
 
 #card1 {
@@ -353,15 +359,15 @@ section#hero {
 
 /*FOOTER*/
 footer {
-    background-color: var(--cor-fundo-header);
-    color: var(--cor-fundo-features-fonte-nav);
+    background-color: var(--header-bg-color);
+    color: var(--features-bg-color);
     padding: 20px;
     line-height: 30px; 
 }
 
 .footer-slogan h2 {
     font-size: 1em;
-    color: var(--cor-fundo-titulo-header);
+    color: var(--header-title-bg);
 }
 
 .footer-slogan p {
@@ -369,8 +375,8 @@ footer {
 }
 
 #insta, #wpp {
-    color: var(--cor-fundo-titulo-header);
-    background-color: var(--cor-fundo-header);
+    color: var(--header-title-bg);
+    background-color: var(--header-bg-color);
     cursor: pointer;
 }
 
@@ -385,7 +391,7 @@ footer {
 }
 
 .footer-style a {
-    color: var(--cor-fundo-features-fonte-nav);
+    color: var(--features-bg-color);
     text-decoration: none;
     cursor: pointer;
 }
@@ -396,7 +402,7 @@ footer {
 
 /*MEDIA QUERIES*/
 @media (min-width: 550px) {
-    .hero-texto-buttons {
+    .hero-text-buttons {
         flex-direction: column;
     }
 
@@ -405,21 +411,24 @@ footer {
         flex-direction: row;
     }
 
-    .card-mamao {
-        text-align: center;
-
+    .card-papaya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 
-    .card-mamao span {
+    .card-papaya span {
         margin-right: 50px;
     }
 
-    #features .card-mamao h2 {
+    #features .card-papaya h2 {
         width: auto;
         margin: 10px auto;
         padding: 5px 15px;
         display: inline-block;
     }
+
+
 }
 
 @media (min-width: 700px) {
@@ -441,7 +450,44 @@ footer {
     }
 
      .pricing-card {
-        width: 60%;
+        width: 100%;
+
+    }
+
+    .pricing-button {
+        width: 50%;
+    }
+
+    section#hero {
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+}
+
+@media (min-width: 720px) {
+    section#hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        min-height: 400px;
+        padding: 20px;
+
+    }
+    
+}
+
+@media (min-width: 750px) {
+    .card-papaya {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    #features .card-papaya h2 {
+        display: block;
+        width: 50%;
+        margin: 10px;
     }
 }
 
@@ -467,7 +513,7 @@ footer {
         line-height: 1.2;
     }
 
-    .hero-texto-buttons {
+    .hero-text-buttons {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -487,7 +533,7 @@ footer {
         flex-direction: column;
     }
 
-    .cardsdepreço {
+    .price-cards {
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -529,6 +575,36 @@ footer {
         max-height: 400px;
     }
 
+   .card-papaya {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    #features .card-papaya h2 {
+        display: block;
+        width: 40%;
+        margin: 10px;
+    }
+
+    .price-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .box01, .box02 {
+        gap: 40px;
+    }
 }
 
 @media (min-width: 1100px) {
@@ -548,4 +624,19 @@ footer {
         max-height: 400px;
     }
 
+    .pricing-card h2, span {
+        font-size: 1.2em;
+    }
+
+
+    #features h1, #pricing h1 {
+        font-size: 30px;
+    }
 }
+
+    @media (min-width: 1200px) {
+    
+    .copy {
+        width: 100%;
+    }
+    }
