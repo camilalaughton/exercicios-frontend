@@ -18,6 +18,11 @@ body {
     width: 100%;
 }
 
+header { grid-area: header; }
+aside  { grid-area: sidebar; }
+main   { grid-area: content; }
+footer { grid-area: footer; }
+
 /*HEADER------------------------------------------------------------------------*/
 header {
     background-color: var(--header-back);
@@ -29,7 +34,6 @@ header {
     padding: 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    
 }
 
 header a {
@@ -37,15 +41,128 @@ header a {
     text-decoration: none;
     padding-right: 15px;
     cursor: pointer;
-    
 }
 
-i.fa-solid, i.fa-brands {
+.fa-brands, .fa-pen-clip, .fa-magnifying-glass {
     color: var(--body-back); 
     cursor: pointer;
 }
 
+/*ASIDE------------------------------------------------------------------------*/
+aside {
+    background-color: var(--aside-back);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 8px;
+}
 
+aside a {
+    text-decoration: none;
+    color: black; 
+    padding: 15px;
+}
+
+.aside-title {
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+aside i {
+    cursor: pointer;
+    color: var(--header-back);
+}
+
+/*MAIN------------------------------------------------------------------------*/
+#feature {
+    padding: 20px;
+}
+
+#feature h2 {
+    margin-bottom: 10px;
+}
+
+#feature h2, #articles h2 {
+    font-size: 20px;
+}
+
+.feature-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.082);
+    background-color: #223343;
+    color: white;
+    border-left: 4px solid #5D473C; 
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.fa-solid.fa-circle {
+    font-size: 4px;
+    padding: 10px;
+}
+
+.feature-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: #ccc;
+}
+
+.feature-box h3 {
+    font-size: 18px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+#articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card01, .card02, .card03 {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.055);
+}
+
+.card01 img, .card02 img, .card03 img {
+    width: 40%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+
+.card01 h3, .card02 h3, .card03 h3 {
+    font-size: 15px;
+    padding: 10px;
+}
+
+.card01 p, .card02 p, .card03 p {
+    padding: 0 10px 5px;
+    font-size: 13px;
+    line-height: 20px;
+}
 
 /*FOOTER------------------------------------------------------------------------*/
 footer {
@@ -53,4 +170,76 @@ footer {
     color: var(--body-back);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 17px;
+}
+
+/*KEYFRAMES------------------------------------------------------------------------*/
+@keyframes pulse {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.85; }
+    100% { opacity: 1; }
+}
+
+/*MEDIA QUERIES------------------------------------------------------------------------*/
+@media (max-width: 799px) {
+    aside {
+        display: none;
+    }
+}    
+
+@media (min-width: 800px) {
+    body {
+        display: grid;
+        grid-template-areas: 
+            "header header"
+            "sidebar content"
+            "footer footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #articles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        align-items: stretch;
+    }
+
+    #articles h2 {
+        grid-column: span 3;
+    }
+    
+    .card01, .card02, .card03 {
+        flex-direction: column;
+        align-self: stretch;
+    }
+
+    .card01 img, .card02 img, .card03 img {
+        width: 100%;
+        height: 150px;
+    }
+
+}
+
+@media (min-width: 1250px) {
+    
 }
