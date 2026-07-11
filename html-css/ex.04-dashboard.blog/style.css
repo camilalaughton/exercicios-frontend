@@ -122,6 +122,10 @@ aside i {
     line-height: 25px;
 }
 
+time {
+    font-size: 14px;
+}
+
 #articles {
     display: flex;
     flex-direction: column;
