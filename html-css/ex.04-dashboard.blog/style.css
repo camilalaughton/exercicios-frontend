@@ -210,6 +210,11 @@ footer {
         min-height: 100vh;
     }
 
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     aside {
         display: flex;
         flex-direction: column;
@@ -241,5 +246,30 @@ footer {
 }
 
 @media (min-width: 1250px) {
-    
+     body {
+        max-width: 1400px;
+        margin: 0 auto; /* centraliza na tela */
+        grid-template-columns: 250px 1fr; /* aside um pouco maior */
+        background-color: #e8e8e8; 
+    }
+
+    main {
+        background-color: var(--body-back);
+    }
+
+    .feature-box img {
+        height: 350px; /* imagem do destaque maior em telas grandes */
+    }
+
+    .card01 img, .card02 img, .card03 img {
+        height: 200px;
+    }
+
+    #feature h2, #articles h2 {
+        font-size: 24px;
+    }
+
+    .feature-box h3 {
+        font-size: 22px;
+    }
 }
