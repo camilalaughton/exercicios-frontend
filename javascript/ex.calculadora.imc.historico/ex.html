@@ -5,33 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora IMC</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora IMC</h1>
+        <span><i class="fa-solid fa-heart-pulse"></i> Calculadora IMC</span>
+
+        <nav>
+            <i class="fa-solid fa-bars"></i>
+            <a href="#"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="#"><i data-lucide="info"></i> Sobre</a>
+            <a href="#"><i class="fa-regular fa-envelope"></i> Contato</a>
+        </nav>
     </header>
 
     <main>
-        <form action="#" method="get">
-            <label for="name">Nome: </label>
-            <input type="text" name="name" id="name">
+        <h1>Calculadora IMC</h1>
+        <p>Descubra seu Índice de Massa Corporal e mantenha sua saúde em dia!</p>
+        <i class="fa-solid fa-heart-pulse"></i>
 
-            <label for="weight">Peso (kg): </label>
-            <input type="text" name="weight" id="weight">
+        <section id="card01">
+            <h3><i class="fa-solid fa-calculator"></i> Calcule seu IMC</h3>
+            <form action="#" method="get">
+                <i class="fa-regular fa-user"></i><label for="name">Nome: </label>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome">
 
-            <label for="height">Altura (m): </label>
-            <input type="text" name="height" id="height">
+                <i class="fa-solid fa-weight-scale"></i><label for="weight">Peso (kg): </label>
+                <input type="text" name="weight" id="weight" placeholder="Ex: 70.5">
 
-            <button id="btn-calculate">Calcular</button> 
-        </form>
+                <i class="fa-solid fa-ruler-vertical"></i><label for="height">Altura (m): </label>
+                <input type="text" name="height" id="height" placeholder="Ex: 1.75">
+
+                <button id="btn-calculate"><i class="fa-solid fa-calculator"></i> Calcular IMC</button>
+            </form>
+            <p><i data-lucide="info"></i> IMC é uma medida que relaciona seu peso e altura para avaliar se você está abaixo, no peso ideal ou acima do peso.</p>
+        </section>
 
         <div id="result"></div>
 
-        <h2>Histórico</h2>
-        <ul id="history-list"></ul>
-        <button id="btn-clear">Limpar histórico</button>
+        <section id="card02">
+            <h3><i class="fa-regular fa-clock"></i> Histórico</h3>
+            <ul id="history-list"></ul>
+            <i data-lucide="clipboard-clock"></i>
+            <p>Nenhum cálculo realizado ainda.</p>
+            <p>Preencha os dados ao lado e clique em "Calcular IMC" para ver seu histórico.</p>
+            <button id="btn-clear"><i class="fa-regular fa-trash-can"></i> Limpar histórico</button>
+        </section>
+
+        <section id="card03"> 
+            <h3><i class="fa-regular fa-lightbulb"></i> O que é IMC?</h3>
+            <p>O Índice de Massa Corporal (IMC) é uma medida internacional usada para calcular se o peso de uma pessoa está adequado à sua altura. É uma ferramenta útil para avaliar riscos à saúde relacionados ao peso.</p>
+        </section>
+
+        <footer>
+            <p><i class="fa-solid fa-heart-pulse"></i> Calculadora IMC &copy; 2026</p>
+            <p><i class="fa-solid fa-circle"></i> Todos os direitos reservados</p>
+            <p>Feito com <i class="fa-solid fa-heart" style="color: rgb(211, 44, 33);"></i> para sua saúde</p>
+        </footer>
     </main>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
