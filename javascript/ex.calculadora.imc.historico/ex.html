@@ -20,21 +20,23 @@
     </header>
 
     <main>
-        <h1>Calculadora IMC</h1>
-        <p>Descubra seu Índice de Massa Corporal</p>
-        <p>e mantenha sua saúde em dia!</p>
-        <i data-lucide="heart-pulse"></i> 
+        <div class="main-top">
+            <h1>Calculadora IMC</h1>
+            <p>Descubra seu Índice de Massa Corporal</p>
+            <p>e mantenha sua saúde em dia!</p>
+            <i data-lucide="heart-pulse"></i>
+        </div> 
 
         <section id="card01">
             <h3><i class="fa-solid fa-calculator"></i> Calcule seu IMC</h3>
             <form action="#" method="get">
-                <i class="fa-regular fa-user"></i><label for="name">Nome: </label>
+                <label for="name"><i class="fa-regular fa-user"></i> Nome: </label>
                 <input type="text" name="name" id="name" placeholder="Digite seu nome">
 
-                <i class="fa-solid fa-weight-scale"></i><label for="weight">Peso (kg): </label>
+                <label for="weight"><i class="fa-solid fa-weight-scale"></i> Peso (kg): </label>
                 <input type="text" name="weight" id="weight" placeholder="Ex: 70.5">
 
-                <i class="fa-solid fa-ruler-vertical"></i><label for="height">Altura (m): </label>
+               <label for="height"> <i class="fa-solid fa-ruler-vertical"></i> Altura (m): </label>
                 <input type="text" name="height" id="height" placeholder="Ex: 1.75">
 
                 <button id="btn-calculate"><i class="fa-solid fa-calculator"></i> Calcular IMC</button>
@@ -45,11 +47,11 @@
         <div id="result"></div>
 
         <section id="card02">
-            <h3><i class="fa-regular fa-clock"></i> Histórico</h3>
+            <h3 id="title-card02"><i class="fa-regular fa-clock"></i> Histórico</h3>
             <ul id="history-list"></ul>
             <i data-lucide="clipboard-clock"></i>
             <p>Nenhum cálculo realizado ainda.</p>
-            <p>Preencha os dados ao lado e clique em "Calcular IMC" para ver seu histórico.</p>
+            <p>Preencha os dados ao lado e clique em <br> "Calcular IMC" para ver seu histórico.</p>
             <button id="btn-clear"><i class="fa-regular fa-trash-can"></i> Limpar histórico</button>
         </section>
 
@@ -59,8 +61,10 @@
         </section>
 
         <footer>
-            <p><i data-lucide="heart-pulse"></i> Calculadora IMC &copy; 2026</p>
-            <p><i class="fa-solid fa-circle"></i> Todos os direitos reservados</p>
+            <div class="footer-info">
+                <p><i data-lucide="heart-pulse"></i> Calculadora IMC &copy; 2026</p>
+                <p><i class="fa-solid fa-circle"></i> Todos os direitos reservados</p>
+            </div>
             <p>Feito com <i class="fa-solid fa-heart" style="color: rgb(211, 44, 33);"></i> para sua saúde</p>
         </footer>
     </main>

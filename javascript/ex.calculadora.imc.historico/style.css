@@ -46,6 +46,10 @@ main {
     padding-top: 20px;
 }
 
+.main-top {
+    padding-bottom: 10px;
+}
+
 main h1 {
     color: var(--color-font);
     padding-bottom: 10px;
@@ -57,6 +61,22 @@ main p {
 
 #card01 {
     background-color: var(--card01);
+    width: 90%;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.032);
+}
+
+#card01 h3 {
+    color: var(--color-font);
+    padding-bottom: 15px;
+}
+
+#card01 p {
+    background-color: var(--back-body);
+    width: 90%;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 form {
@@ -67,13 +87,99 @@ form {
     padding-bottom: 20px;
 }
 
+form input {
+    width: 80%;
+    height: 30px;
+    
+}
+
+form label {
+    font-weight: bold;
+}
+
+#btn-calculate {
+    width: 90%;
+    color: white;
+    background-color: #E35D79; 
+    height: 30px;
+    border-radius: 5px;
+}
+
+#card02 {
+    width: 90%;
+    padding: 15px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.037);
+    border-radius: 7px;
+    margin-top: 20px;
+    background-color: #FDF4F6;
+    text-align: center;
+    
+}
+
+#title-card02 {
+    text-align: left;
+}
+
+#btn-clear {
+    width: 40%;
+    height: 30px;
+    color: #E35D79; 
+    border-color:var(--back-header);
+    border-radius: 5px;
+    background-color: var(--back-body);
+    margin-top: 10px;
+}
+
+#card02 h3 {
+    color: var(--color-font);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+#card03 {
+    width: 90%;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.027);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#card03 h3 {
+    color: var(--color-font);
+    padding-bottom: 10px;
+}
 
 footer {
     background-color: var(--back-header);
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: .9em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 600px) {
     nav {
         display: none;
     }
+}
+
+@media (min-width: 601px) {
+    .fa-solid.fa-bars {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    
 }
