@@ -9,10 +9,12 @@
 :root {
     --back-body: #FDF2F5; 
     --color-font: #933B56; 
-    --back-header: #E58297; 
+    --back-header: #F07F9A - #D4758B ; 
+    --back-footer: #DE7992 - #C36982;
+    --border: #F1E6E8; 
     --card01: #FEFDFE;
     --card02: #FDF0F3; 
-    --btn:#E35D79 - #F07D7F; 
+    --btn:#E35C7A - #F07D7F; 
 }
 
 body {
@@ -24,7 +26,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--back-header);
+    background: linear-gradient(to right, #F07F9A, #D4758B);
     color: white;
     padding: 20px;
 }
@@ -53,10 +55,26 @@ main {
 main h1 {
     color: var(--color-font);
     padding-bottom: 10px;
+    text-align: center;
 }
 
 main p {
     line-height: 23px;
+}
+
+.p-info {
+    background-color: var(--back-body);
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid rgba(222, 157, 167, 0.304);
+}
+
+.cards {
+    width:90%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
 #card01 {
@@ -70,13 +88,6 @@ main p {
 #card01 h3 {
     color: var(--color-font);
     padding-bottom: 15px;
-}
-
-#card01 p {
-    background-color: var(--back-body);
-    width: 90%;
-    border-radius: 5px;
-    padding: 10px;
 }
 
 form {
@@ -100,7 +111,7 @@ form label {
 #btn-calculate {
     width: 90%;
     color: white;
-    background-color: #E35D79; 
+    background: linear-gradient(to right, #E35C7A, #F07D7F); 
     height: 30px;
     border-radius: 5px;
 }
@@ -118,6 +129,7 @@ form label {
 
 #title-card02 {
     text-align: left;
+    border-bottom: 1px solid rgba(222, 157, 167, 0.269);
 }
 
 #btn-clear {
@@ -128,12 +140,14 @@ form label {
     border-radius: 5px;
     background-color: var(--back-body);
     margin-top: 10px;
+    border: 1px solid lightpink;
 }
 
 #card02 h3 {
     color: var(--color-font);
     padding-top: 15px;
     padding-bottom: 15px;
+    
     
 }
 
@@ -144,6 +158,7 @@ form label {
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
+    border: 1px solid rgba(222, 157, 167, 0.304);
 }
 
 #card03 h3 {
@@ -152,7 +167,7 @@ form label {
 }
 
 footer {
-    background-color: var(--back-header);
+    background: linear-gradient(to left,#C36982, #DE7992);
     width: 100%;
     padding: 10px;
     color: white;
@@ -181,5 +196,47 @@ footer {
 }
 
 @media (min-width: 900px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: flex-end;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+   }
+
+   #card01, #card02 {
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        border-radius: 0;
+   }
+
+   #card01 {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: 1px solid rgba(222, 157, 167, 0.203);
+   }
+
+   #card02{
+        margin-top: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #card02 h3 {
+        padding-top: 0; 
+    }
+
+    .footer-info {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px) {
     
 }
