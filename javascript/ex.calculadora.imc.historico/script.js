@@ -53,8 +53,20 @@ function calculate(event) {
 
 function updateHistory() {
     const historyList = document.getElementById('history-list')
+    const historyEmpty = document.getElementById('history-empty')
 
-    historyList.innerHTML = '' // limpa a lista antes de redesenhar 
+    historyList.innerHTML = '' // limpa a lista antes de redesenhar
+
+    // se não tem nenhum cálculo ainda, mostra a mensagem de "vazio"
+    // e esconde a lista. Se já tem, faz o contrário.
+    if (history.length === 0) {
+        historyEmpty.style.display = 'flex'
+        historyList.style.display = 'none'
+        return
+    }
+
+    historyEmpty.style.display = 'none'
+    historyList.style.display = 'block'
 
     for (let i = 0; i < history.length; i++) {
         historyList.innerHTML += `<li>${history[i]}</li>`

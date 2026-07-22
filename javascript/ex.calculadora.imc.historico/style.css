@@ -1,11 +1,11 @@
 @charset "UTF-8"; 
-
+ 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-
+ 
 :root {
     --back-body: #FDF2F5; 
     --color-font: #933B56; 
@@ -16,12 +16,130 @@
     --card02: #FDF0F3; 
     --btn:#E35C7A - #F07D7F; 
 }
-
+ 
+html, body {
+    height: 100%; 
+}
+ 
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--back-body);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
+ 
+/* ============================================
+   ÍCONES — regras adicionadas
+   ============================================ */
+ 
+/* 1) Ícones "soltos": logo, menu, botões, footer.
+   Sem caixa de fundo. Só alinho ícone + texto lado a lado
+   com flex + gap, no eixo vertical. */
+header p,
+nav a,
+#btn-calculate,
+#btn-clear,
+footer p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+.fa-solid.fa-house {
+    font-size: 14px;
+}
+ 
+/* 2) Ícones dentro de títulos (h3) e labels do formulário:
+   caixinha quadrada arredondada, fundo rosa clarinho. */
+#card01 h3,
+#card02 h3,
+#card03 h3,
+form label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: var(--card02);
+    border-radius: 8px;
+}
+ 
+.icon-box i {
+    font-size: 20px;
+    color: var(--color-font);
+}
+ 
+/* 3) Ícone circular pequeno: usado no coração abaixo do
+   subtítulo e no "i" da caixa de informação. */
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    background-color: var(--card02);
+    border-radius: 50%;
+     margin-top: 8px;
+    
+}
+ 
+.icon-circle.heart02 i {
+    font-size: 30px;
+}
+ 
+.icon-circle i {
+    font-size: 15px;
+    color: #E35C7A;
+}
+ 
+/* Variante "preenchida": fundo forte, ícone branco
+   (usada no "i" de informação, para destacar mais) */
+.icon-circle-fill {
+    background-color: var(--back-body);
+    margin-top: 0;
+}
+ 
+.icon-circle-fill i {
+    color: #933B56;
+    font-size: 25px;
+}
+ 
+/* Ajusta o .p-info para o ícone ficar ao lado do texto,
+   alinhado no topo (igual à referência) */
+.p-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+ 
+/* 4) Ícone circular grande: histórico vazio */
+.icon-circle-lg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background-color: var(--card02);
+    border-radius: 50%;
+    margin: 10px auto;
+    margin-top: 0px;
+}
+ 
+.icon-circle-lg i {
+    font-size: 48px;
+    color: #F0A6B4;
+    
+}
+ 
 header {
     display: flex;
     flex-direction: row;
@@ -30,38 +148,40 @@ header {
     color: white;
     padding: 20px;
 }
-
+ 
 header a {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
-
+ 
 header p {
     font-weight: bold;
 }
-
+ 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding: 20px;
+    flex: 1;
 }
-
+ 
 .main-top {
     padding-bottom: 10px;
+    text-align: center;
 }
-
+ 
 main h1 {
     color: var(--color-font);
     padding-bottom: 10px;
     text-align: center;
 }
-
+ 
 main p {
     line-height: 23px;
 }
-
+ 
 .p-info {
     background-color: var(--back-body);
     width: 100%;
@@ -69,27 +189,26 @@ main p {
     padding: 10px;
     border: 1px solid rgba(222, 157, 167, 0.304);
 }
-
+ 
 .cards {
     width:90%;
     display:flex;
     flex-direction:column;
-    gap:20px;
 }
-
+ 
 #card01 {
     background-color: var(--card01);
-    width: 90%;
+    width: 100%;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.032);
 }
-
+ 
 #card01 h3 {
     color: var(--color-font);
     padding-bottom: 15px;
 }
-
+ 
 form {
     display: flex;
     flex-direction: column;
@@ -97,27 +216,48 @@ form {
     gap: 10px;
     padding-bottom: 20px;
 }
-
-form input {
-    width: 80%;
-    height: 30px;
-    
+ 
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
 }
-
+ 
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+ 
 form label {
     font-weight: bold;
 }
-
+ 
+form input {
+    width: 100%;
+    height: 30px;
+}
+ 
 #btn-calculate {
-    width: 90%;
+    width: 100%;
     color: white;
     background: linear-gradient(to right, #E35C7A, #F07D7F); 
     height: 30px;
     border-radius: 5px;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+ 
+#result {
+    padding-top: 20px;
+    text-align: center;
 }
 
 #card02 {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.037);
     border-radius: 7px;
@@ -126,12 +266,33 @@ form label {
     text-align: center;
     
 }
-
+ 
 #title-card02 {
     text-align: left;
     border-bottom: 1px solid rgba(222, 157, 167, 0.269);
 }
-
+ 
+#history-list {
+    display: none;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+ 
+#history-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+#history-list li {
+    padding: 10px 5px;
+    border-bottom: 1px solid rgba(222, 157, 167, 0.35);
+    color: var(--color-font);
+    font-size: 0.9rem;
+}
+ 
 #btn-clear {
     width: 40%;
     height: 30px;
@@ -141,8 +302,16 @@ form label {
     background-color: var(--back-body);
     margin-top: 10px;
     border: 1px solid lightpink;
+    justify-content: center;
+    cursor: pointer;
+ 
 }
-
+ 
+.btn-clear {
+    display: flex;
+    justify-content: center;
+}
+ 
 #card02 h3 {
     color: var(--color-font);
     padding-top: 15px;
@@ -150,22 +319,22 @@ form label {
     
     
 }
-
+ 
 #card03 {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.027);
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 35px;
     margin-bottom: 15px;
     border: 1px solid rgba(222, 157, 167, 0.304);
 }
-
+ 
 #card03 h3 {
     color: var(--color-font);
     padding-bottom: 10px;
 }
-
+ 
 footer {
     background: linear-gradient(to left,#C36982, #DE7992);
     width: 100%;
@@ -177,24 +346,28 @@ footer {
     align-items: center;
     justify-content: space-between;
 }
-
+ 
 .footer-info {
     display: flex;
     flex-direction: column;
 }
-
+ 
+.fa-solid.fa-circle {
+    margin-left: 10px;
+}
+ 
 @media (max-width: 600px) {
     nav {
         display: none;
     }
 }
-
+ 
 @media (min-width: 601px) {
     .fa-solid.fa-bars {
         display: none;
     }
 }
-
+ 
 @media (min-width: 900px) {
     nav {
         display: flex;
@@ -202,41 +375,59 @@ footer {
         gap: 15px;
         align-items: flex-end;
     }
-
+ 
     .cards {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
    }
-
+ 
    #card01, #card02 {
-        width: 100%;
         margin: 0;
         height: 100%;
         border-radius: 0;
    }
-
+ 
    #card01 {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         border-right: 1px solid rgba(222, 157, 167, 0.203);
    }
-
-   #card02{
+ 
+   #card02 {
         margin-top: 0;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     }
-
+ 
     #card02 h3 {
         padding-top: 0; 
     }
-
+ 
     .footer-info {
         flex-direction: row;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
     
+    main {
+        max-width: 1250px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+ 
+    #card01, #card02 {
+        margin-top: 20px;
+    }
+
+    #card03 {
+        margin-top: 60px;
+        margin-bottom: 0;    
+    }
+
+    footer {
+        height: 50px;
+    }
 }
+
