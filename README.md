@@ -19,12 +19,16 @@ Exercícios práticos de HTML, CSS e JavaScript durante minha formação em Fron
 
 **Landing page** — Página de vendas de hortifruti. Ícones, listas, imagens, Flexbox, classes e IDs, box model, animações com keyframes, pseudo-classes, media queries.
 
- ![Landing page](screenshots/landing-page.png) ![Landing page](screenshots/landing-page2.png)
+ ![Landing page](screenshots/landing-page.png) 
+ 
+ ![Landing page](screenshots/landing-page2.png)
  
 
 **Dashboard de blog** — Página de blog com artigos sobre tecnologia. Ícones, links externos, classes, IDs, pseudo-classes, Flexbox e CSS Grid combinados, mobile-first com media queries.
 
- ![Dashboard de blog](screenshots/dashboard-blog.png) ![Dashboard de blog](screenshots/dashboard-blog2.png)
+ ![Dashboard de blog](screenshots/dashboard-blog.png) 
+ 
+ ![Dashboard de blog](screenshots/dashboard-blog2.png)
  
 
 ### JavaScript
