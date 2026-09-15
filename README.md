@@ -28,7 +28,7 @@ Exercícios práticos de HTML, CSS e JavaScript durante minha formação em Fron
  ![Calculadora de IMC com histórico](screenshots/calculadora-imc-historico.png) ![Calculadora de IMC com histórico](screenshots/calculadora-imc-historico2.png)
 
 **Calculadora de troco** — Cálculo de troco com lógica condicional. Formulário, funções, DOM, estrutura condicional `if`, expressões booleanas, operadores lógicos.
- ![Calculadora de troco](screenshots/calculadora-troco-perfil.png)
+ ![Calculadora de troco](screenshots/calculadora-troco.png)
 
 **Ficha de personagem** — A partir dos atributos informados, calcula poder de ataque, defesa, status e nível do personagem. Formulário, classes, IDs, pseudo-classes, Flexbox, DOM, estrutura `if/else`, expressões booleanas, operadores lógicos.
  ![Ficha de personagem](screenshots/ficha-personagem.png)
