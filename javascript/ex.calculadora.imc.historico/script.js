@@ -1,9 +1,6 @@
-const history = [] // array vazio que vai acumular os resultados
+const history = []
 
-// pega o botão pelo id
 const button = document.getElementById('btn-calculate')
-
-// quando o botão for clicado, executa a função calcular
 button.addEventListener('click', calculate)
 
 function classifyIMC(imc) {
@@ -23,31 +20,31 @@ function classifyIMC(imc) {
 }
 
 function calculate(event) {
-    event.preventDefault() // impede o formulário de recarregar a página
+    event.preventDefault()
 
-     // 1. primeiro pega os valores
-    const name = document.getElementById('name').value
+    const name = document.getElementById('name').value.trim()
     const weight = parseFloat(document.getElementById('weight').value)
     const height = parseFloat(document.getElementById('height').value)
 
-    // validação — campos vazios ou inválidos
-    if (!name || isNaN(weight) || isNaN(height)) {
-        document.getElementById('result').textContent = 'Preencha todos os campos corretamente!'
-        return // para a função aqui
+    const result = document.getElementById('result')
+    const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/
+
+    if (!name || !nameRegex.test(name)) {
+        result.textContent = 'Digite um nome válido (apenas letras)!'
+        return
     }
 
-    // 2. depois calcula
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        result.textContent = 'Preencha peso e altura com valores válidos!'
+        return
+    }
+
     const imc = (weight / (height ** 2)).toFixed(1)
     const classification = classifyIMC(parseFloat(imc))
 
-    // 3. exibe o resultado
-    const result = document.getElementById('result')
     result.textContent = `${name}, seu IMC é ${imc} - ${classification}`
 
-    // 4. só agora adiciona ao histórico (porque agora name, imc e classification existem)
     history.push(`${name}: ${imc} - ${classification}`)
-
-    // 5. atualiza a lista
     updateHistory()
 }
 
@@ -55,10 +52,8 @@ function updateHistory() {
     const historyList = document.getElementById('history-list')
     const historyEmpty = document.getElementById('history-empty')
 
-    historyList.innerHTML = '' // limpa a lista antes de redesenhar
+    historyList.innerHTML = ''
 
-    // se não tem nenhum cálculo ainda, mostra a mensagem de "vazio"
-    // e esconde a lista. Se já tem, faz o contrário.
     if (history.length === 0) {
         historyEmpty.style.display = 'flex'
         historyList.style.display = 'none'
@@ -77,7 +72,7 @@ const btnClear = document.getElementById('btn-clear')
 btnClear.addEventListener('click', clearHistory)
 
 function clearHistory() {
-    history.length = 0 // esvazia o array
-    updateHistory() // redesenha a lista (agora vazia)
+    history.length = 0
+    updateHistory()
     document.getElementById('result').textContent = ''
 }
