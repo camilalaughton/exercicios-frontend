@@ -7,7 +7,7 @@ function calcular() {
 
     const resultado = document.getElementById("resultado");
 
-    if (isNaN(preco) || isNaN(pago) || pago === 0 || preco === 0) {
+    if (isNaN(preco) || isNaN(pago) || preco <= 0 || pago <= 0) {
         resultado.textContent = "Digite valores válidos!";
         resultado.className = "erro";
         return;
