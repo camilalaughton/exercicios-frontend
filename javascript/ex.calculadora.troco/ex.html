@@ -4,70 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Troco</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        label {
-            font-weight: bold;
-            font-size: 20px;
-           
-        }
-
-        input {
-            margin: 15px;
-            width: 20%;
-            height: 20px;
-        }    
-
-        button {
-            font-weight: bold;
-        }
-    </style> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calculadora de Troco</h1>
-    </header>
-
     <main>
-        <form>
-            <label for="valorproduto">Valor do Produto: </label> <br>
-            <input type="text" name="valorproduto" id="valorproduto" placeholder="Ex: 100" required> <br>
-            <label for="valorpago">Valor Pago: </label> <br>
-            <input type="text" name="valorpago" id="valorpago" placeholder="Ex: 200" required> <br>
-            <button type="button" id="btn">Calcular</button>
-        </form>
-        <p id="resultado"></p>
+        <section class="card">
+            <h1>Calculadora de Troco</h1>
+            <p class="intro">Informe o valor do produto e o valor pago para calcular o troco.</p>
+
+            <form>
+                <div class="field">
+                    <label for="valorproduto">Valor do produto (R$)</label>
+                    <input type="text" name="valorproduto" id="valorproduto" placeholder="Ex: 100" inputmode="decimal" required>
+                </div>
+
+                <div class="field">
+                    <label for="valorpago">Valor pago (R$)</label>
+                    <input type="text" name="valorpago" id="valorpago" placeholder="Ex: 200" inputmode="decimal" required>
+                </div>
+
+                <button type="button" id="btn">Calcular</button>
+            </form>
+
+            <div class="result">
+                <p id="resultado"></p>
+            </div>
+        </section>
     </main>
 
-    <script>
-        function calcular () {
-            let precotexto = document.getElementById("valorproduto").value;
-            let pagotexto = document.getElementById("valorpago").value;
-            
-            let preco = parseFloat(precotexto);
-            let pago = parseFloat(pagotexto);
-
-            if (isNaN(preco) || isNaN(pago) || pago == 0 || preco == 0)  {
-                document.getElementById("resultado").textContent = "Digite valores válidos!";
-                return;
-            }
-
-            if (pago < preco) {
-                document.getElementById("resultado").textContent = "Valor pago insuficiente!"
-                return;
-            }
-
-            let troco = pago - preco; 
-            document.getElementById("resultado").textContent = "Troco: R$ " + troco.toFixed(2); 
-        }
-
-        document.getElementById("btn").addEventListener("click", calcular); 
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
