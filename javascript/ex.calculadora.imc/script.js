@@ -15,7 +15,7 @@ function calcular() {
     const resultado = document.getElementById("resultado");
     const categoria = document.getElementById("categoria");
 
-    if (isNaN(peso) || isNaN(altura) || altura === 0) {
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
         resultado.textContent = "Digite valores válidos!";
         categoria.textContent = "";
         categoria.className = "";
