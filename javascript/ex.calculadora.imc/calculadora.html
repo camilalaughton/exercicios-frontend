@@ -3,53 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+    <title>Calculadora de IMC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calculadora IMC</h1>
-    </header>
     <main>
-        <p>Informe seus dados abaixo!</p>
-        <form>
-            <label for="height">Altura (m)</label>
-            <input type="text" name="height" id="height" placeholder="1.75" required>
-            <label for="weight">Peso (kg)</label>
-            <input type="text" name="weight" id="weight" placeholder="70" required>
-            <button type="button" id="btn">Calcular</button>
-        </form>
-        <div class="result">
-            <p id="resultado"></p>
-        </div>
+        <section class="card">
+            <h1>Calculadora de IMC</h1>
+            <p class="intro">Informe sua altura e peso para calcular seu Índice de Massa Corporal.</p>
+
+            <form>
+                <div class="field">
+                    <label for="height">Altura (m)</label>
+                    <input type="text" name="height" id="height" placeholder="1.75" inputmode="decimal" required>
+                </div>
+
+                <div class="field">
+                    <label for="weight">Peso (kg)</label>
+                    <input type="text" name="weight" id="weight" placeholder="70" inputmode="decimal" required>
+                </div>
+
+                <button type="button" id="btn">Calcular</button>
+            </form>
+
+            <div class="result" id="result-box">
+                <p id="resultado"></p>
+                <p id="categoria"></p>
+            </div>
+        </section>
     </main>
 
-    <script>
-       
-       function calcular() {
-        let pesoTexto = document.getElementById("weight").value;
-        let alturaTexto = document.getElementById("height").value;
-
-        let peso = parseFloat(pesoTexto);
-        let altura = parseFloat(alturaTexto);
-
-        if (isNaN(peso) || isNaN(altura) || altura === 0) {
-        document.getElementById("resultado").textContent = "Digite valores válidos!";
-        return;
-        }
-
-        let imc = peso / (altura ** 2); 
-        document.getElementById("resultado").textContent = "IMC: " + imc.toFixed(2);
-       }
-
-        document.getElementById("btn").addEventListener("click", calcular);
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
